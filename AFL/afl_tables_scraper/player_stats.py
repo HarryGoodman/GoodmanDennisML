@@ -48,13 +48,7 @@ def get_player_stats(year:int=2021) -> pd.DataFrame:
     
 
 
-def main():
-    import os
-    print(os.getcwd())
-    os.chdir(r'C:\Users\gabri\Dropbox\Repos\GoodmanDennisML\AFL\data\afl_table_data')
-    for year in range(1897, 2022):
-        p = get_player_stats(year=year)
-        p.to_parquet(path = f'AFL-Tables_player-stats_{year}.parquet')
+
     
 
 
