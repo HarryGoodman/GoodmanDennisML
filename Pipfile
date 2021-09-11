@@ -6,9 +6,10 @@ name = "pypi"
 [packages]
 requests = "*"
 bs4 = "*"
-pytest = "*"
+
 
 [dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.8"
