@@ -6,7 +6,9 @@ name = "pypi"
 [packages]
 requests = "*"
 bs4 = "*"
-
+pandas = "*"
+pyarrow = "*"
+fastparquet = "*"
 
 [dev-packages]
 pytest = "*"
