@@ -9,7 +9,8 @@ def get_player_stats(year:int=2021) -> pd.DataFrame:
        https://afltables.com/afl/stats/
 
     Args:
-        year (int, optional): Year to retrieve stats from. Defaults to 2021.
+        year (int, optional): Year to retrieve stats from. Acceptable range (1897-2021).
+         Defaults to 2021.
     
     Raises:
         HTTPError: 
@@ -18,6 +19,8 @@ def get_player_stats(year:int=2021) -> pd.DataFrame:
     Returns:
         pd.DataFramet: A data frame with player names ad the index and statistics as the column names
     """
+    if not (1987 <= year <= 2021):
+        raise ValueError(f'{year=} is not in range: 1897-2021')
     try:
         r = requests.get(f'https://afltables.com/afl/stats/{year}.html')
     except HTTPError as http_err:
